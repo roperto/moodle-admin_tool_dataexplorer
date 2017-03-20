@@ -1,1 +1,1 @@
-# moodle-admin_tool_dataexplorer
+# moodle-tool_dataexplorer
