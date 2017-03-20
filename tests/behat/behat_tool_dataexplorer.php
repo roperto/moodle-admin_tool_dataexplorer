@@ -45,7 +45,7 @@ class behat_tool_dataexplorer extends behat_base {
     /**
      * @Given /^there is a tool dataexplorere context$/
      */
-    public function thereIsAToolDataexplorereContext() {
+    public function there_is_a_tool_dataexplorere_context() {
         // Do nothing.
     }
 }
