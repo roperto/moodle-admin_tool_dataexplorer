@@ -21,11 +21,11 @@
  * @copyright  2017 Daniel Thee Roperto
  * @author     Daniel Thee Roperto <daniel@theeroperto.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @var $plugin stdClass
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-/** @var $plugin stdClass */
 $plugin->version = 2017020801;
-$plugin->requires = 2016052305; // Moodle 3.1
+$plugin->requires = 2016052305; // Moodle 3.1 or newer.
 $plugin->component = 'tool_dataexplorer';

@@ -23,7 +23,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @var $ADMIN admin_root
  * @var $CFG stdClass
-*/
+ */
 
 defined('MOODLE_INTERNAL') || die();
 
