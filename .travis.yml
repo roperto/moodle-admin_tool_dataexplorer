@@ -25,6 +25,7 @@ env:
 
 before_install:
   - phpenv config-rm xdebug.ini
+  - echo "always_populate_raw_post_data = -1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
   - cd ../..
   - composer selfupdate
   - composer create-project -n --no-dev moodlerooms/moodle-plugin-ci ci ^1
