@@ -24,3 +24,4 @@
  */
 
 $string['pluginname'] = 'Data Explorer';
+$string['dataexplorer_database'] = 'Database Explorer';

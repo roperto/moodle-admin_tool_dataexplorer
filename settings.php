@@ -30,10 +30,15 @@ defined('MOODLE_INTERNAL') || die();
 if ($hassiteconfig) {
     $ADMIN->add(
         'development',
+        new admin_category('tool_dataexplorer', new lang_string('pluginname', 'tool_dataexplorer'))
+    );
+
+    $ADMIN->add(
+        'tool_dataexplorer',
         new admin_externalpage(
-            'tool_dataexplorer',
-            get_string('pluginname', 'tool_dataexplorer'),
-            new moodle_url("/{$CFG->admin}/tool/dataexplorer/")
+            'tool_dataexplorer_database',
+            get_string('dataexplorer_database', 'tool_dataexplorer'),
+            new moodle_url("/{$CFG->admin}/tool/dataexplorer/database-explorer.php")
         )
     );
 }

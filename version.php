@@ -26,6 +26,6 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2017020801;
+$plugin->version = 2017020802;
 $plugin->requires = 2016052305; // Moodle 3.1 or newer.
 $plugin->component = 'tool_dataexplorer';
