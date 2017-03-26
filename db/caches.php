@@ -15,17 +15,21 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Data Explorer Admin Tool
+ * Data Explorer Caches
  *
- * @package    tool_dataexplorer
- * @copyright  2017 Daniel Thee Roperto
- * @author     Daniel Thee Roperto <daniel@theeroperto.com>
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- * @var $plugin stdClass
+ * @package     tool_dataexplorer
+ * @copyright   2017 Daniel Thee Roperto
+ * @author      Daniel Thee Roperto <daniel@theeroperto.com>
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @var $CFG    stdClass
+ * @var $PAGE   moodle_page
+ * @var $OUTPUT core_renderer
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2017032500;
-$plugin->requires = 2016052305; // Moodle 3.1 or newer.
-$plugin->component = 'tool_dataexplorer';
+$definitions = [
+    'application' => [
+        'mode' => cache_store::MODE_APPLICATION,
+    ],
+];

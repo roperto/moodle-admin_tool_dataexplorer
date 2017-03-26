@@ -45,6 +45,13 @@ require_once(__DIR__.'/../../../../../lib/behat/behat_base.php');
  */
 class behat_tool_dataexplorer extends behat_base {
     /**
+     * @When /^I am on the "([^"]+)" page in Data Explorer$/
+     */
+    public function i_am_on_the_page_in_data_explorer($page) {
+        $this->visitPath("/admin/tool/dataexplorer/{$page}.php");
+    }
+
+    /**
      * @Then /^I (.*) have access any PHP page inside dataexplorer$/
      */
     public function i_have_access_any_php_page_inside_dataexplorer($shouldsee) {

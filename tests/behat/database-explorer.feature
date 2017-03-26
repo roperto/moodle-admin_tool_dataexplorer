@@ -4,8 +4,16 @@ Feature: Database Explorer
   As a site administrator
   I need to view and browse through the data
 
-  Scenario: I can browse to the database explorer
+  Background: Only admins can use the database explorer
     Given I log in as "admin"
-    And I am on site homepage
+
+  Scenario: I can browse to the database explorer
+    Given I am on site homepage
     When I navigate to "Database Explorer" node in "Site administration > Development > Data Explorer"
-    Then I should see "Data Explorer - Database"
+    Then I should see "Data Explorer"
+    Then I should see "Database Explorer"
+
+  Scenario: I can list the tables of the database
+    When I am on the "database-explorer" page in Data Explorer
+    Then I should see "users"
+    And I should see "One record for each person"
