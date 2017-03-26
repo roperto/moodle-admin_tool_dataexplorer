@@ -15,24 +15,14 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Data Explorer Landing Page
+ * Data Explorer index.php
  *
- * @package     tool_dataexplorer
- * @copyright   2017 Daniel Thee Roperto
- * @author      Daniel Thee Roperto <daniel@theeroperto.com>
- * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- * @var $CFG    stdClass
- * @var $PAGE   moodle_page
- * @var $OUTPUT core_renderer
+ * @package    tool_dataexplorer
+ * @copyright  2017 Daniel Thee Roperto
+ * @author     Daniel Thee Roperto <daniel@theeroperto.com>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @var $ADMIN admin_root
+ * @var $CFG stdClass
  */
-
 require(__DIR__.'/../../../config.php');
-require_once($CFG->libdir.'/adminlib.php');
-
-admin_externalpage_setup('tool_dataexplorer_database');
-$PAGE->set_url(new moodle_url('/admin/tool/dataexplorer/database-explorer.php'));
-echo $OUTPUT->header();
-
-echo 'Hello World!';
-
-echo $OUTPUT->footer();
+redirect(new moodle_url('/admin/tool/dataexplorer/database-explorer.php'));
