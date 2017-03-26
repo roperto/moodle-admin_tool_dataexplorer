@@ -25,3 +25,5 @@
 
 $string['pluginname'] = 'Data Explorer';
 $string['dataexplorer_database'] = 'Database Explorer';
+$string['tableheader_database_table'] = 'Table';
+$string['tableheader_database_description'] = 'Description';

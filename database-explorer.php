@@ -27,6 +27,9 @@
  * @var $DB     moodle_database
  */
 
+use tool_dataexplorer\local\database\database;
+use tool_dataexplorer\output\database_table;
+
 require(__DIR__.'/../../../config.php');
 require_once($CFG->libdir.'/adminlib.php');
 
@@ -34,32 +37,8 @@ admin_externalpage_setup('tool_dataexplorer_database');
 $PAGE->set_url(new moodle_url('/admin/tool/dataexplorer/database-explorer.php'));
 echo $OUTPUT->header();
 
-global $DB;
-
-// Find all install.xml files and all tables.
-$cache = cache::make('tool_dataexplorer', 'application');
-$tables = $cache->get('tables');
-if ($tables === false) {
-    $tables = $DB->get_manager()->get_install_xml_schema()->getTables();
-    usort($tables, function($a, $b) {
-        return strcmp($a->getName(), $b->getName());
-    });
-    $cache->set('tables', $tables);
-}
-
-echo '<table>';
-echo '<tr>';
-echo '<th>table</th>';
-echo '<th>comment</th>';
-echo '</tr>';
-foreach ($tables as $table) {
-    /** @var $table xmldb_table */
-    $fields = count($table->getFields());
-    echo '<tr>';
-    echo "<td>{$table->getName()}</td>";
-    echo "<td>{$table->getComment()}</td>";
-    echo '</tr>';
-}
-echo '</table>';
+$table = new database_table();
+$dbtables = database::get()->get_tables();
+$table->show_data($dbtables);
 
 echo $OUTPUT->footer();
